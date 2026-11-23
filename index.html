@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>La Sartania · Cucina cilentana a Salerno</title>
+<meta name="description" content="La Sartania, trattoria di cucina tipica cilentana a Salerno. Pasta fatta in casa, salumi e formaggi del Cilento, dolci della casa. Via Costanzella Calenda 6.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f5eee2; --paper:#fbf7f0; --ink:#2a1d14; --ink2:#5a4636;
+  --terra:#b4512a; --terra-d:#8f3c1c; --olive:#5b6a37; --gold:#c99a3e;
+  --line:rgba(42,29,20,.14);
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1160px,92vw);margin:0 auto}
+.preview{background:var(--ink);color:#e9dcc6;font-size:12.5px;text-align:center;padding:7px 12px;letter-spacing:.02em}
+.preview b{color:var(--gold)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(245,238,226,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.logo{font-family:var(--serif);font-weight:800;font-size:24px;text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.logo svg{width:30px;height:30px}
+.logo small{display:block;font-family:var(--sans);font-weight:500;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);margin-top:-3px}
+.links{display:flex;gap:26px;align-items:center}
+.links a{text-decoration:none;font-size:14.5px;font-weight:500;color:var(--ink2)}
+.links a:hover{color:var(--terra)}
+.lang{border:1px solid var(--line);background:none;border-radius:20px;padding:5px 11px;font:600 12px var(--sans);cursor:pointer;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--terra);color:#fff;text-decoration:none;border:0;border-radius:40px;padding:13px 24px;font:600 15px var(--sans);cursor:pointer;transition:.2s}
+.btn:hover{background:var(--terra-d);transform:translateY(-1px)}
+.btn.ghost{background:transparent;border:1.5px solid currentColor;color:inherit}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.nav-cta{padding:9px 18px;font-size:14px}
+@media(max-width:880px){.links a{display:none}}
+
+/* HERO */
+.hero{position:relative;min-height:calc(100vh - 100px);min-height:calc(100svh - 100px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:zoom 14s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,12,6,.15) 0%,rgba(20,12,6,.35) 45%,rgba(20,12,6,.88) 100%)}
+.hero .wrap{position:relative;z-index:2;padding:0 0 64px}
+.kicker{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:#f1d9a8;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.kicker:before{content:"";width:34px;height:1px;background:currentColor}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(56px,11vw,148px);line-height:.9;letter-spacing:-.03em}
+.hero h1 em{font-style:italic;font-weight:400;color:#f1d9a8}
+.hero p.lead{max-width:560px;font-size:clamp(17px,2vw,20px);margin:22px 0 30px;color:#f3e9da}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.badges{display:flex;gap:28px;flex-wrap:wrap;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.22)}
+.badge b{font-family:var(--serif);font-size:30px;font-weight:600;display:block;line-height:1}
+.badge span{font-size:13px;color:#e8d9c2}
+@media(max-width:560px){.badges{flex-wrap:nowrap;gap:14px;margin-top:28px}.badge b{font-size:22px}.badge span{font-size:11px;line-height:1.3;display:block;margin-top:4px}.hero .wrap{padding-bottom:96px}}
+
+/* MARQUEE */
+.ribbon{background:var(--terra);color:#fff;overflow:hidden;white-space:nowrap;padding:14px 0}
+.ribbon div{display:inline-block;animation:slide 38s linear infinite;font-family:var(--serif);font-style:italic;font-size:21px}
+.ribbon span{margin:0 26px}.ribbon i{font-style:normal;color:#f1d9a8}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:clamp(72px,10vw,120px) 0}
+.eyebrow{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--terra);margin-bottom:14px}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(36px,5.2vw,62px);line-height:1.02;letter-spacing:-.02em}
+h2 em{font-style:italic;font-weight:400;color:var(--terra)}
+.sub{color:var(--ink2);max-width:620px;margin-top:18px;font-size:18px}
+
+.story{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,90px);align-items:center}
+.story .imgs{position:relative;padding-bottom:70px}
+.story .imgs img{border-radius:6px;box-shadow:0 30px 60px -30px rgba(42,29,20,.5)}
+.story .imgs .a{width:82%;aspect-ratio:4/3;object-fit:cover}
+.story .imgs .b{position:absolute;right:0;bottom:0;width:44%;aspect-ratio:3/4;object-fit:cover;border:8px solid var(--cream)}
+.story p{color:var(--ink2);margin-top:18px}
+.story blockquote{font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.35;margin-top:28px;padding-left:20px;border-left:3px solid var(--terra);color:var(--ink)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+.fact{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px}
+.fact b{font-family:var(--serif);font-size:19px;display:block}
+.fact span{font-size:13.5px;color:var(--ink2)}
+@media(max-width:880px){.story{grid-template-columns:1fr}.facts{grid-template-columns:1fr}}
+
+/* MENU DEL GIORNO */
+.menu{background:var(--ink);color:#efe4d3}
+.menu h2 em{color:#e7b77a}.menu .eyebrow{color:#e7b77a}.menu .sub{color:#cbbba6}
+.howto{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12);margin-top:54px;border:1px solid rgba(255,255,255,.12)}
+.course{background:var(--ink);padding:30px 26px 34px;position:relative}
+.course .n{font-family:var(--serif);font-size:15px;color:#e7b77a;font-style:italic}
+.course h3{font-family:var(--serif);font-weight:600;font-size:27px;margin:8px 0 12px;color:#fff}
+.course ul{list-style:none;font-size:15px;color:#d6c8b4}
+.course li{padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.14)}
+.course li:last-child{border:0}
+.menu-note{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:34px;padding:22px 26px;border:1px solid rgba(231,183,122,.4);border-radius:6px;background:rgba(231,183,122,.07)}
+.menu-note p{max-width:720px;font-size:15.5px;color:#e5d7c3}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tag{font-size:12px;font-weight:600;padding:5px 11px;border-radius:20px;background:rgba(255,255,255,.08);color:#e9dcc8}
+@media(max-width:980px){.howto{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.howto{grid-template-columns:1fr}}
+
+/* GALLERY */
+.gallery-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.gnav button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ink);background:none;font-size:18px;cursor:pointer;margin-left:6px}
+.gnav button:hover{background:var(--ink);color:#fff}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:thin}
+.strip figure{flex:0 0 auto;scroll-snap-align:start;min-width:0}
+.strip img{height:clamp(280px,42vw,460px);width:auto;border-radius:6px;object-fit:cover}
+.strip figcaption{font-size:13.5px;color:var(--ink2);margin-top:9px;font-style:italic;font-family:var(--serif)}
+
+/* REVIEWS */
+.reviews{background:var(--paper)}
+.scores{display:flex;gap:18px;flex-wrap:wrap;margin-top:30px}
+.score{border:1px solid var(--line);border-radius:6px;padding:18px 24px;background:var(--cream);min-width:210px}
+.score b{font-family:var(--serif);font-size:44px;font-weight:600;line-height:1}
+.score .st{color:var(--gold);letter-spacing:2px;font-size:15px}
+.score span{display:block;font-size:13.5px;color:var(--ink2)}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.rev{background:var(--cream);border-radius:6px;padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.rev p{font-family:var(--serif);font-size:19px;line-height:1.4}
+.rev small{color:var(--ink2);font-size:13px;margin-top:auto}
+.rnote{font-size:12.5px;color:var(--ink2);margin-top:18px}
+@media(max-width:880px){.rgrid{grid-template-columns:1fr}}
+
+/* INFO */
+.info{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px)}
+.hours{margin-top:26px;border-top:1px solid var(--line)}
+.hours div{display:flex;justify-content:space-between;padding:13px 2px;border-bottom:1px solid var(--line);font-size:16px}
+.hours div.today{font-weight:600;color:var(--terra)}
+.hours span:last-child{color:var(--ink2);text-align:right}
+.hours div.today span:last-child{color:var(--terra)}
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:7px 14px;border-radius:30px;margin-top:20px;background:#e9e3d3}
+.status i{width:9px;height:9px;border-radius:50%;background:#999}
+.status.open{background:#e3ead3;color:#3f5220}.status.open i{background:#5b8a2b;box-shadow:0 0 0 4px rgba(91,138,43,.2)}
+.status.closed{background:#f1ddd2;color:#8f3c1c}.status.closed i{background:var(--terra)}
+.where{margin-top:30px}
+.where p{color:var(--ink2);margin-top:6px}
+.mapcard{margin-top:18px;border-radius:6px;overflow:hidden;position:relative;background:var(--olive);color:#fff;padding:26px;min-height:180px;display:flex;flex-direction:column;justify-content:space-between}
+.mapcard svg{position:absolute;inset:0;width:100%;height:100%;opacity:.28}
+.mapcard *{position:relative}
+.mapcard b{font-family:var(--serif);font-size:24px}
+
+/* FORM */
+.book{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:clamp(24px,4vw,40px)}
+.book h3{font-family:var(--serif);font-size:32px;font-weight:600;line-height:1.1}
+.book p.s{color:var(--ink2);font-size:15px;margin:8px 0 22px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:12.5px;font-weight:600;letter-spacing:.04em;color:var(--ink2);margin:12px 0 6px}
+input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:#fff;font:15px var(--sans);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--terra);outline-offset:1px}
+.warn{font-size:13px;color:var(--terra-d);min-height:18px;margin-top:8px}
+.book .btn{width:100%;justify-content:center;margin-top:16px;background:#25843f}
+.book .btn:hover{background:#1c6a32}
+.book .btn[aria-disabled=true]{opacity:.45;pointer-events:none}
+.fine{font-size:12.5px;color:var(--ink2);margin-top:12px;text-align:center}
+@media(max-width:880px){.info{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:#cbbba6;padding:56px 0 110px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer .logo{color:#fff}
+footer a{color:#efe4d3}
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(42,29,20,.96)}
+.mbar a{flex:1;justify-content:center;padding:13px}
+@media(max-width:760px){.mbar{display:flex}footer{padding-bottom:120px}}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero img,.ribbon div{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="preview"><b>Anteprima</b> · proposta di sito per La Sartania — testi e foto illustrativi, da sostituire con quelli del locale</div>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="La Sartania">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="17" cy="20" r="13" fill="none" stroke="#b4512a" stroke-width="3"/><circle cx="17" cy="20" r="8" fill="#b4512a" opacity=".18"/><path d="M29 16 L39 11" stroke="#2a1d14" stroke-width="4" stroke-linecap="round"/></svg>
+      <span>La Sartania<small>Cucina cilentana</small></span>
+    </a>
+    <div class="links">
+      <a href="#storia" data-it="La trattoria" data-en="Our story">La trattoria</a>
+      <a href="#menu" data-it="Menu del giorno" data-en="Daily menu">Menu del giorno</a>
+      <a href="#galleria" data-it="Galleria" data-en="Gallery">Galleria</a>
+      <a href="#recensioni" data-it="Recensioni" data-en="Reviews">Recensioni</a>
+      <a href="#prenota" data-it="Orari e contatti" data-en="Hours & contact">Orari e contatti</a>
+      <button class="lang" id="lang" type="button" aria-label="Switch language">EN</button>
+      <a class="btn nav-cta" href="#prenota" data-it="Prenota" data-en="Book">Prenota</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img src="img/hero.webp" alt="Pane casereccio e salame stagionato su un tagliere di legno">
+  <div class="wrap">
+    <div class="kicker" data-it="Trattoria · Salerno" data-en="Trattoria · Salerno">Trattoria · Salerno</div>
+    <h1>La <em>Sartania</em></h1>
+    <p class="lead" data-it="Il Cilento a tavola, a due passi dal parco Pinocchio. Pasta fatta a mano, salumi e formaggi del territorio e i dolci di casa: quello che c'è oggi te lo racconta Angelo." data-en="The flavours of Cilento, a short walk from Parco Pinocchio. Handmade pasta, local cured meats and cheeses, homemade desserts — Angelo will tell you what's cooking today.">Il Cilento a tavola, a due passi dal parco Pinocchio. Pasta fatta a mano, salumi e formaggi del territorio e i dolci di casa: quello che c'è oggi te lo racconta Angelo.</p>
+    <div class="ctas">
+      <a class="btn" href="#prenota" data-it="Prenota un tavolo" data-en="Book a table">Prenota un tavolo</a>
+      <a class="btn ghost" href="#menu" data-it="Come funziona il menu" data-en="How our menu works">Come funziona il menu</a>
+    </div>
+    <div class="badges">
+      <div class="badge"><b>4,6 ★</b><span data-it="Tripadvisor · oltre 580 recensioni" data-en="Tripadvisor · 580+ reviews">Tripadvisor · oltre 580 recensioni</span></div>
+      <div class="badge"><b>4,5 ★</b><span data-it="Google · 466 recensioni" data-en="Google · 466 reviews">Google · 466 recensioni</span></div>
+      <div class="badge"><b>Top 20</b><span data-it="tra gli 890 ristoranti di Salerno" data-en="of 890 restaurants in Salerno">tra gli 890 ristoranti di Salerno</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="ribbon" aria-hidden="true"><div>
+  <span>Ravioli alle due ricotte</span><i>✦</i><span>Cavatelli fatti a mano</span><i>✦</i><span>Salumi e formaggi cilentani</span><i>✦</i><span>Pane di grano saraceno</span><i>✦</i><span>Spezzatino con patate</span><i>✦</i><span>Crostata di fichi e pere</span><i>✦</i>
+  <span>Ravioli alle due ricotte</span><i>✦</i><span>Cavatelli fatti a mano</span><i>✦</i><span>Salumi e formaggi cilentani</span><i>✦</i><span>Pane di grano saraceno</span><i>✦</i><span>Spezzatino con patate</span><i>✦</i><span>Crostata di fichi e pere</span><i>✦</i>
+</div></div>
+
+<section id="storia">
+  <div class="wrap story">
+    <div class="imgs reveal">
+      <img class="a" src="img/pasta-fresca.webp" alt="Pasta fresca fatta a mano" loading="lazy">
+      <img class="b" src="img/ravioli.webp" alt="Ravioli fatti in casa calati nell'acqua" loading="lazy">
+    </div>
+    <div class="reveal">
+      <div class="eyebrow" data-it="La trattoria" data-en="Our story">La trattoria</div>
+      <h2 data-it="Come a casa, <em>nel Cilento</em>" data-en="Just like home, <em>in Cilento</em>">Come a casa, <em>nel Cilento</em></h2>
+      <p data-it="La “sartania” è la padella di casa, quella delle nonne. Da qui parte tutto: una sala piccola e accogliente, una cucina che segue le stagioni e i prodotti che arrivano dal Cilento interno, la terra di Angelo." data-en="A “sartania” is the old family frying pan — the one every grandmother had. That's where it all starts: a small, welcoming room, a kitchen that follows the seasons and products from inland Cilento, Angelo's homeland.">La “sartania” è la padella di casa, quella delle nonne. Da qui parte tutto: una sala piccola e accogliente, una cucina che segue le stagioni e i prodotti che arrivano dal Cilento interno, la terra di Angelo.</p>
+      <p data-it="Niente menu stampato e niente pesce: qui si mangia la cucina di terra. Pasta tirata a mano, verdure dell'orto, carne cotta piano e i dolci preparati in famiglia." data-en="No printed menu and no seafood: this is Cilento's countryside cooking. Hand-rolled pasta, garden vegetables, slow-cooked meat and desserts made by the family.">Niente menu stampato e niente pesce: qui si mangia la cucina di terra. Pasta tirata a mano, verdure dell'orto, carne cotta piano e i dolci preparati in famiglia.</p>
+      <blockquote data-it="“Poco, ma buono. E tanto basta.”" data-en="“Not much, but good. And that's enough.”">“Poco, ma buono. E tanto basta.”</blockquote>
+      <div class="facts">
+        <div class="fact"><b data-it="Pasta fatta a mano" data-en="Handmade pasta">Pasta fatta a mano</b><span data-it="ogni giorno, in cucina" data-en="every day, in our kitchen">ogni giorno, in cucina</span></div>
+        <div class="fact"><b data-it="Prodotti cilentani" data-en="Cilento products">Prodotti cilentani</b><span data-it="salumi, latticini, pane" data-en="cured meats, cheese, bread">salumi, latticini, pane</span></div>
+        <div class="fact"><b data-it="Per tutti" data-en="For everyone">Per tutti</b><span data-it="opzioni vegetariane e vegane" data-en="vegetarian & vegan options">opzioni vegetariane e vegane</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="eyebrow reveal" data-it="Menu del giorno" data-en="Daily menu">Menu del giorno</div>
+    <h2 class="reveal" data-it="Il menu cambia ogni giorno. <em>Te lo racconta Angelo.</em>" data-en="The menu changes daily. <em>Angelo will tell you about it.</em>">Il menu cambia ogni giorno. <em>Te lo racconta Angelo.</em></h2>
+    <p class="sub reveal" data-it="Si cucina con quello che offre la stagione. Ecco i piatti che i nostri ospiti ricordano di più." data-en="We cook with what the season brings. These are the dishes our guests remember most.">Si cucina con quello che offre la stagione. Ecco i piatti che i nostri ospiti ricordano di più.</p>
+    <div class="howto reveal">
+      <div class="course"><div class="n">i.</div><h3 data-it="Antipasto la Sartania" data-en="Sartania starter">Antipasto la Sartania</h3>
+        <ul><li data-it="Salumi e formaggi cilentani" data-en="Cilento cured meats & cheeses">Salumi e formaggi cilentani</li><li data-it="Frittate e verdure di stagione" data-en="Omelettes & seasonal vegetables">Frittate e verdure di stagione</li><li data-it="Cipolle in agrodolce, peperoni" data-en="Sweet & sour onions, peppers">Cipolle in agrodolce, peperoni</li><li data-it="Pane di grano saraceno" data-en="Buckwheat bread">Pane di grano saraceno</li></ul></div>
+      <div class="course"><div class="n">ii.</div><h3 data-it="Primi" data-en="Pasta">Primi</h3>
+        <ul><li data-it="Ravioli alle due ricotte" data-en="Two-ricotta ravioli">Ravioli alle due ricotte</li><li data-it="Strozzapreti zucca e salsiccia" data-en="Strozzapreti, pumpkin & sausage">Strozzapreti zucca e salsiccia</li><li data-it="Fusilli al ferretto al ragù" data-en="Hand-rolled fusilli with ragù">Fusilli al ferretto al ragù</li><li data-it="Cavatelli della tradizione" data-en="Traditional cavatelli">Cavatelli della tradizione</li></ul></div>
+      <div class="course"><div class="n">iii.</div><h3 data-it="Secondi" data-en="Mains">Secondi</h3>
+        <ul><li data-it="Spezzatino con patate" data-en="Meat stew with potatoes">Spezzatino con patate</li><li data-it="Carni alla brace" data-en="Grilled meats">Carni alla brace</li><li data-it="Contorni dell'orto" data-en="Garden side dishes">Contorni dell'orto</li></ul></div>
+      <div class="course"><div class="n">iv.</div><h3 data-it="Dolci di casa" data-en="Homemade desserts">Dolci di casa</h3>
+        <ul><li data-it="Crostata di fichi e pere" data-en="Fig & pear tart">Crostata di fichi e pere</li><li data-it="Torta di castagne" data-en="Chestnut tart">Torta di castagne</li><li data-it="Pan di Spagna all'arancia" data-en="Orange sponge cake">Pan di Spagna all'arancia</li><li data-it="Torta caprese, mimosa" data-en="Caprese & mimosa cake">Torta caprese, mimosa</li></ul></div>
+    </div>
+    <div class="menu-note reveal">
+      <div>
+        <p data-it="Prezzi popolari e porzioni abbondanti. Hai un'intolleranza o un'allergia? Dillo ad Angelo quando prenoti: troviamo sempre una soluzione." data-en="Honest prices and generous portions. Any allergy or intolerance? Let Angelo know when you book — we'll always find a way.">Prezzi popolari e porzioni abbondanti. Hai un'intolleranza o un'allergia? Dillo ad Angelo quando prenoti: troviamo sempre una soluzione.</p>
+        <div class="tags"><span class="tag" data-it="Vegetariano" data-en="Vegetarian">Vegetariano</span><span class="tag" data-it="Vegano" data-en="Vegan">Vegano</span><span class="tag" data-it="Senza glutine su richiesta" data-en="Gluten-free on request">Senza glutine su richiesta</span><span class="tag" data-it="Asporto" data-en="Takeaway">Asporto</span><span class="tag">We speak English</span></div>
+      </div>
+      <a class="btn" href="#prenota" data-it="Prenota" data-en="Book">Prenota</a>
+    </div>
+  </div>
+</section>
+
+<section id="galleria">
+  <div class="wrap">
+    <div class="gallery-head">
+      <div>
+        <div class="eyebrow" data-it="Galleria" data-en="Gallery">Galleria</div>
+        <h2 data-it="Sapori <em>di terra</em>" data-en="Flavours <em>of the land</em>">Sapori <em>di terra</em></h2>
+      </div>
+      <div class="gnav"><button type="button" id="prev" aria-label="Foto precedente">←</button><button type="button" id="next" aria-label="Foto successiva">→</button></div>
+    </div>
+    <div class="strip" id="strip" tabindex="0">
+      <figure><img src="img/salumi.webp" width="1400" height="934" alt="Salumi affettati con verdure"><figcaption data-it="I salumi del Cilento" data-en="Cilento cured meats">I salumi del Cilento</figcaption></figure>
+      <figure><img src="img/primo.webp" width="1400" height="932" alt="Pasta al pomodoro con ricotta e basilico"><figcaption data-it="Pasta, pomodoro e ricotta" data-en="Pasta, tomato & ricotta">Pasta, pomodoro e ricotta</figcaption></figure>
+      <figure><img src="img/crostata.webp" width="667" height="1000" alt="Crostata fatta in casa"><figcaption data-it="La crostata di casa" data-en="Our homemade tart">La crostata di casa</figcaption></figure>
+      <figure><img src="img/sala.webp" width="1400" height="934" alt="Sala del ristorante con tavoli in legno"><figcaption data-it="La sala" data-en="The dining room">La sala</figcaption></figure>
+      <figure><img src="img/salame.webp" width="1200" height="801" alt="Salame stagionato affettato"><figcaption data-it="Stagionatura lenta" data-en="Slowly aged">Stagionatura lenta</figcaption></figure>
+      <figure><img src="img/tavolo.webp" width="668" height="1000" alt="Tavolo apparecchiato"><figcaption data-it="Un tavolo per voi" data-en="A table for you">Un tavolo per voi</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="recensioni">
+  <div class="wrap">
+    <div class="eyebrow" data-it="Dicono di noi" data-en="Reviews">Dicono di noi</div>
+    <h2 data-it="Si arriva da clienti, <em>si esce da amici</em>" data-en="Come as guests, <em>leave as friends</em>">Si arriva da clienti, <em>si esce da amici</em></h2>
+    <div class="scores">
+      <div class="score"><b>4,6</b> <span class="st">★★★★★</span><span>Tripadvisor · 585 recensioni</span></div>
+      <div class="score"><b>4,5</b> <span class="st">★★★★★</span><span>Google · 466 recensioni</span></div>
+      <div class="score"><b>92%</b><span data-it="lo consiglia su Facebook" data-en="recommend us on Facebook">lo consiglia su Facebook</span></div>
+    </div>
+    <div class="rgrid">
+      <div class="rev reveal"><p data-it="Cucina cilentana vera, cavatelli come quelli della nonna. Torneremo." data-en="Real Cilento cooking, cavatelli just like grandma's. We'll be back.">Cucina cilentana vera, cavatelli come quelli della nonna. Torneremo.</p><small>Cliente · Google</small></div>
+      <div class="rev reveal"><p data-it="Il pasto migliore del nostro viaggio in Italia. Angelo ci ha fatti sentire di famiglia." data-en="The best meal of our whole Italy trip. Angelo made us feel like family.">Il pasto migliore del nostro viaggio in Italia. Angelo ci ha fatti sentire di famiglia.</p><small>Viaggiatori · Tripadvisor</small></div>
+      <div class="rev reveal"><p data-it="Ravioli ottimi e un pan di Spagna all'arancia da ricordare. Prezzi onestissimi." data-en="Great ravioli and an orange sponge cake to remember. Very honest prices.">Ravioli ottimi e un pan di Spagna all'arancia da ricordare. Prezzi onestissimi.</p><small>Cliente · Google</small></div>
+    </div>
+    <p class="rnote" data-it="Sintesi di recensioni pubbliche, in anteprima. Nel sito definitivo verranno mostrate con il consenso del locale." data-en="Summary of public reviews, for preview only.">Sintesi di recensioni pubbliche, in anteprima. Nel sito definitivo verranno mostrate con il consenso del locale.</p>
+  </div>
+</section>
+
+<section id="prenota">
+  <div class="wrap info">
+    <div>
+      <div class="eyebrow" data-it="Orari e contatti" data-en="Hours & contact">Orari e contatti</div>
+      <h2 data-it="Vi aspettiamo <em>a tavola</em>" data-en="See you <em>at the table</em>">Vi aspettiamo <em>a tavola</em></h2>
+      <div class="status" id="status"><i></i><span>—</span></div>
+      <div class="hours" id="hours"></div>
+      <div class="where">
+        <b data-it="Dove siamo" data-en="Find us">Dove siamo</b>
+        <p>Via Costanzella Calenda 6, 84126 Salerno · <span data-it="vicino al parco Pinocchio, parcheggio in strada" data-en="near Parco Pinocchio, street parking">vicino al parco Pinocchio, parcheggio in strada</span></p>
+        <div class="mapcard">
+          <svg viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 140 C80 120 120 160 200 130 S330 80 400 100" stroke="#fff" stroke-width="10" fill="none"/><path d="M60 0 L120 200 M260 0 L230 200 M0 60 L400 40" stroke="#fff" stroke-width="3" fill="none"/></svg>
+          <b>La Sartania</b>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" style="background:#fff;color:var(--ink)" href="https://www.google.com/maps/search/?api=1&query=La+Sartania+Via+Costanzella+Calenda+6+Salerno" target="_blank" rel="noopener" data-it="Apri in Google Maps" data-en="Open in Google Maps">Apri in Google Maps</a>
+            <a class="btn ghost" href="tel:+393408704636">340 870 4636</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="book" id="book" novalidate>
+      <h3 data-it="Prenota un tavolo" data-en="Book a table">Prenota un tavolo</h3>
+      <p class="s" data-it="La sala è piccola: meglio prenotare. La richiesta arriva su WhatsApp e Angelo ti conferma la disponibilità." data-en="Our room is small, so booking is recommended. Your request goes via WhatsApp and Angelo will confirm availability.">La sala è piccola: meglio prenotare. La richiesta arriva su WhatsApp e Angelo ti conferma la disponibilità.</p>
+      <label for="nome" data-it="Nome" data-en="Name">Nome</label>
+      <input id="nome" autocomplete="name" placeholder="Mario Rossi">
+      <div class="row">
+        <div><label for="data" data-it="Giorno" data-en="Date">Giorno</label><input id="data" type="date"></div>
+        <div><label for="pers" data-it="Persone" data-en="Guests">Persone</label>
+          <select id="pers"></select></div>
+      </div>
+      <div class="row">
+        <div><label for="turno" data-it="Pasto" data-en="Meal">Pasto</label>
+          <select id="turno"><option value="pranzo" data-it="Pranzo" data-en="Lunch">Pranzo</option><option value="cena" data-it="Cena" data-en="Dinner">Cena</option></select></div>
+        <div><label for="ora" data-it="Orario" data-en="Time">Orario</label><select id="ora"></select></div>
+      </div>
+      <label for="note" data-it="Note (allergie, occasioni…)" data-en="Notes (allergies, occasions…)">Note (allergie, occasioni…)</label>
+      <textarea id="note" rows="2"></textarea>
+      <div class="warn" id="warn"></div>
+      <a class="btn" id="wa" href="#" target="_blank" rel="noopener" aria-disabled="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+        <span data-it="Invia la richiesta su WhatsApp" data-en="Send request on WhatsApp">Invia la richiesta su WhatsApp</span></a>
+      <p class="fine" data-it="La prenotazione è valida solo dopo la conferma del ristorante. Oppure chiama: 340 870 4636" data-en="Your booking is valid only once the restaurant confirms. Or call: +39 340 870 4636">La prenotazione è valida solo dopo la conferma del ristorante. Oppure chiama: 340 870 4636</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="logo">La Sartania</div>
+      <p style="margin-top:10px">Cucina tipica cilentana<br>Via Costanzella Calenda 6, 84126 Salerno</p>
+    </div>
+    <div>
+      <p>Tel. / WhatsApp <a href="tel:+393408704636">340 870 4636</a></p>
+      <p>Email <a href="mailto:carmendalessandro@hotmail.it">carmendalessandro@hotmail.it</a></p>
+      <p><a href="https://www.facebook.com/p/Ristorante-La-Sartania-100063572380346/" target="_blank" rel="noopener">Facebook</a></p>
+    </div>
+    <div>
+      <p>P.IVA —</p>
+      <p style="opacity:.7">Anteprima · foto illustrative</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn ghost" style="color:#fff" href="tel:+393408704636" data-it="Chiama" data-en="Call">Chiama</a>
+  <a class="btn" href="#prenota" data-it="Prenota" data-en="Book">Prenota</a>
+</div>
+
+<script>
+(function(){
+  var lang='it';
+  // Orari: 0=dom ... 6=sab, in minuti
+  var H={0:[[750,990]],1:[[750,930],[1170,1410]],2:[],3:[[750,930],[1170,1410]],4:[[750,930],[1170,1410]],5:[[750,930],[1170,1410]],6:[[750,930],[1170,1440]]};
+  var D={it:['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'],en:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']};
+  var T={it:{closed:'Chiuso',lunch:'solo pranzo',open:'Aperto ora',shut:'Chiuso ora',opens:'riapre',today:'oggi',at:'alle',choose:'Scegli un orario',tue:'Il martedì siamo chiusi: scegli un altro giorno.',sunE:'La domenica siamo aperti solo a pranzo.',past:'Scegli una data da oggi in poi.',need:'Inserisci nome e giorno per continuare.'},
+          en:{closed:'Closed',lunch:'lunch only',open:'Open now',shut:'Closed now',opens:'opens',today:'today',at:'at',choose:'Choose a time',tue:'We are closed on Tuesdays: please pick another day.',sunE:'On Sundays we are open for lunch only.',past:'Please choose a date from today onwards.',need:'Enter your name and date to continue.'}};
+  function hm(m){m=m%1440;return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')}
+  function rome(){var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Rome',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());var o={};p.forEach(function(x){o[x.type]=x.value});return{d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday),m:(+o.hour%24)*60+(+o.minute)}}
+  function renderHours(){
+    var now=rome(),t=T[lang],box=document.getElementById('hours');box.innerHTML='';
+    [1,2,3,4,5,6,0].forEach(function(d){
+      var r=H[d],txt=r.length?r.map(function(x){return hm(x[0])+'–'+(x[1]>=1440?'24:00':hm(x[1]))}).join(' · '):t.closed;
+      if(d===0)txt+=' ('+t.lunch+')';
+      var el=document.createElement('div');if(d===now.d)el.className='today';
+      el.innerHTML='<span>'+D[lang][d]+'</span><span>'+txt+'</span>';box.appendChild(el);
+    });
+    var open=H[now.d].some(function(x){return now.m>=x[0]&&now.m<x[1]}),s=document.getElementById('status');
+    if(open){s.className='status open';s.lastElementChild.textContent=t.open}
+    else{
+      var nx=null;for(var i=0;i<8&&!nx;i++){var d=(now.d+i)%7;H[d].forEach(function(x){if(!nx&&(i>0||x[0]>now.m))nx={d:d,i:i,m:x[0]}})}
+      s.className='status closed';s.lastElementChild.textContent=t.shut+(nx?' · '+t.opens+' '+(nx.i===0?t.today:D[lang][nx.d].toLowerCase())+' '+t.at+' '+hm(nx.m):'');
+    }
+  }
+  // form
+  var $=function(i){return document.getElementById(i)};
+  var pers=$('pers');for(var n=1;n<=12;n++){var o=document.createElement('option');o.value=n;o.textContent=n+(n===12?'+':'');if(n===2)o.selected=true;pers.appendChild(o)}
+  var today=new Date();var iso=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');$('data').min=iso;
+  function slots(){
+    var s=$('ora'),cur=s.value,day=$('data').value?new Date($('data').value+'T12:00').getDay():null;
+    var turno=$('turno').value,list=[];
+    var range=turno==='pranzo'?[750,day===0?900:840]:[1170,day===6?1320:1290];
+    for(var m=range[0];m<=range[1];m+=30)list.push(hm(m));
+    s.innerHTML='';list.forEach(function(v){var o=document.createElement('option');o.value=v;o.textContent=v;s.appendChild(o)});if(list.indexOf(cur)>-1)s.value=cur;
+  }
+  function update(){
+    var t=T[lang],w=$('warn'),a=$('wa'),nome=$('nome').value.trim(),data=$('data').value,msg='';
+    var day=data?new Date(data+'T12:00').getDay():null;
+    var cena=$('turno').querySelector('[value=cena]');cena.disabled=(day===0);if(day===0&&$('turno').value==='cena'){$('turno').value='pranzo';slots()}
+    if(data&&data<iso)msg=t.past;else if(day===2)msg=t.tue;else if(day===0)msg=t.sunE;
+    w.textContent=msg;
+    var ok=nome&&data&&data>=iso&&day!==2;
+    if(!ok){a.setAttribute('aria-disabled','true');a.href='#';if(!msg&&(nome||data))w.textContent=t.need;return}
+    a.setAttribute('aria-disabled','false');
+    var f=data.split('-').reverse().join('/');
+    var txt='Buongiorno, vorrei prenotare un tavolo alla Sartania.\nNome: '+nome+'\nGiorno: '+f+' ('+($('turno').value)+')\nOrario: '+$('ora').value+'\nPersone: '+pers.value+($('note').value.trim()?'\nNote: '+$('note').value.trim():'')+'\nAttendo vostra conferma, grazie!';
+    a.href='https://wa.me/393408704636?text='+encodeURIComponent(txt);
+  }
+  ['nome','data','pers','ora','note'].forEach(function(i){$(i).addEventListener('input',update)});
+  $('data').addEventListener('change',function(){slots();update()});
+  $('turno').addEventListener('change',function(){slots();update()});
+  $('book').addEventListener('submit',function(e){e.preventDefault()});
+  slots();
+  // lingua
+  function setLang(l){lang=l;document.documentElement.lang=l;
+    document.querySelectorAll('[data-'+l+']').forEach(function(el){el.innerHTML=el.getAttribute('data-'+l)});
+    $('lang').textContent=l==='it'?'EN':'IT';renderHours();update();
+    try{localStorage.setItem('sartania-lang',l)}catch(e){}}
+  $('lang').addEventListener('click',function(){setLang(lang==='it'?'en':'it')});
+  try{var sv=localStorage.getItem('sartania-lang');if(sv==='en')setLang('en');else renderHours()}catch(e){renderHours()}
+  setInterval(renderHours,60000);
+  // galleria
+  var st=$('strip');function go(dir){st.scrollBy({left:dir*Math.min(st.clientWidth*.8,520),behavior:'smooth'})}
+  $('prev').onclick=function(){go(-1)};$('next').onclick=function(){go(1)};
+  st.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){go(1);e.preventDefault()}if(e.key==='ArrowLeft'){go(-1);e.preventDefault()}});
+  // reveal
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)})}
+  else document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
